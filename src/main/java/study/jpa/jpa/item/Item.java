@@ -1,32 +1,27 @@
-package study.jpa.jpa.member.entity;
+package study.jpa.jpa.item;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import lombok.Getter;
-import lombok.Setter;
 
 /**
  * @author dkansk924@naver.com
- * @since 2021/06/14
+ * @since 2021/06/17
  */
 
 @Entity
-@Getter
-@Setter
-public class Member {
+public class Item {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "member_id")
+    @Column(name = "item_id")
     private Long id;
 
     private String name;
 
-    private String city;
+    private int price;
 
-    private String street;
-
-    private String zipCode;
+    private int stockQuantity;
 }
