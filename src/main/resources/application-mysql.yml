@@ -1,9 +1,17 @@
 spring:
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/examreplication
-    username: root
-    password: password
+    master:
+      hikari:
+        username: root
+        password: password
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3306/examreplication
+    slave:
+      hikari:
+        username: root
+        password: password
+        driver-class-name: com.mysql.cj.jdbc.Driver
+        jdbc-url: jdbc:mysql://localhost:3307/examreplication
   jpa:
     generate-ddl: true
     show-sql: true
