@@ -1,4 +1,4 @@
-## Mysql Master Slave 구축하기
+## Master Slave 
 
 
 1. compose docker
