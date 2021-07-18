@@ -17,6 +17,7 @@ docker inspect {CONTAINER ID}
 
 2. Approach slave container
 ```bash
+docker ps
 docker exec -it {SLAVE_CONTAINER_ID} bash
 mysql -u root -p
 ```
