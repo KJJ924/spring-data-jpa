@@ -22,7 +22,7 @@ docker exec -it {SLAVE_CONTAINER_ID} bash
 mysql -u root -p
 ```
 
-3. slave setting
+4. slave setting
 ```bash
 stop slave;
 
@@ -40,6 +40,6 @@ show slave status\G;
 
 ```
 
-4. check status   
+5. check status   
 
 ![image](https://user-images.githubusercontent.com/64793712/126068024-feaeef47-d7be-4060-87cd-ff192bb61a6f.png)
