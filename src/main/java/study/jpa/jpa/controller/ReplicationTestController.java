@@ -2,7 +2,6 @@ package study.jpa.jpa.controller;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import study.jpa.jpa.board.Board;
@@ -26,7 +25,6 @@ public class ReplicationTestController {
     }
 
     @GetMapping("/replication/nreadonly")
-    @Transactional
     public List<Board> nreadonlyTransaction() {
         return boardService.getBoardList();
     }
