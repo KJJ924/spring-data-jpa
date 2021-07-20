@@ -15,7 +15,7 @@ docker inspect {CONTAINER ID}
 ```
 
 
-2. Approach slave container
+3. Approach slave container
 ```bash
 docker ps
 docker exec -it {SLAVE_CONTAINER_ID} bash
@@ -40,5 +40,6 @@ show slave status\G;
 
 ```
 
-4. check status
-   ![image](https://user-images.githubusercontent.com/64793712/126068024-feaeef47-d7be-4060-87cd-ff192bb61a6f.png)
+4. check status   
+
+![image](https://user-images.githubusercontent.com/64793712/126068024-feaeef47-d7be-4060-87cd-ff192bb61a6f.png)
