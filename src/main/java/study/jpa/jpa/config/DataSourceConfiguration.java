@@ -11,6 +11,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.context.annotation.Primary;
+import org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy;
 
 /**
  * @author dkansk924@naver.com
@@ -40,7 +41,6 @@ public class DataSourceConfiguration {
     }
 
     @Bean
-    @Primary
     @DependsOn({MASTER_DATASOURCE, SLAVE_DATASOURCE})
     public DataSource routingDataSource(
         @Qualifier(MASTER_DATASOURCE) DataSource masterDataSource,
@@ -53,11 +53,11 @@ public class DataSourceConfiguration {
         routingDataSource.setDefaultTargetDataSource(masterDataSource);
         return routingDataSource;
     }
-//
-//    @Primary
-//    @Bean
-//    @DependsOn("routingDataSource")
-//    public LazyConnectionDataSourceProxy dataSource(DataSource routingDataSource){
-//        return new LazyConnectionDataSourceProxy(routingDataSource);
-//    }
+
+    @Primary
+    @Bean
+    @DependsOn("routingDataSource")
+    public LazyConnectionDataSourceProxy dataSource(DataSource routingDataSource){
+        return new LazyConnectionDataSourceProxy(routingDataSource);
+    }
 }
